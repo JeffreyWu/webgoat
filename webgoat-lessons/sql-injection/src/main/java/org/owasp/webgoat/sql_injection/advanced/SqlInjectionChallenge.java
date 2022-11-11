@@ -87,6 +87,8 @@ public class SqlInjectionChallenge extends AssignmentEndpoint {
                     preparedStatement.execute();
                     attackResult = success().feedback("user.created").feedbackArgs(username_reg).build();
                 }
+
+                log.info("register new user");
             } catch(SQLException e) {
                 attackResult = failed().output("Something went wrong").build();
             }
